@@ -1,0 +1,22 @@
+{
+  "name": "cas",
+  "version": "1.0.0",
+  "description": "Business Consultancy App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dnguyen101/CAS.git"
+  },
+  "author": "Team CAS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dnguyen101/CAS/issues"
+  },
+  "homepage": "https://github.com/dnguyen101/CAS#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

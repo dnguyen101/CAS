@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #EFF1F5;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0; 
+    padding: 0; 
+    border: 0;
+}
+
+h1 {
+    font-weight: bold;
+    margin: 0;
+}
+
+p {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+span {
+    font-size: 12px;
+}
+
+a {
+    color: #B1B1B1;
+    font-size: 12px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.registration-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 520px;
+}
+
+.sign-up-container {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    position: relative;
+    overflow: hidden;
+    width: 800px;
+    max-width: 100%;
+    min-height: 620px;
+}
+
+.overlay-container {
+
+    width: 45%;
+    height: 100%;
+    background: #b1cec8;
+}
+
+.overlay-container h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+    font-size: 3rem;
+}
+
+.form-container {
+    background: #fff;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    left: 45%;
+    width: 55%;
+}
+
+.form-container p {
+    color: #A5A5A5;
+    margin: 30px 0;
+}
+
+.login-form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 50px;
+    height: 90%;
+}
+
+.signup-form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 50px;
+    height: 90%;
+}
+
+.signup-form .agree-terms {
+    padding: 0 50px;
+    margin-top: -40px;
+}
+
+.login-form .new-user, .signup-form .agree-terms {
+    padding: 0 50px;
+    margin-top: -40px;
+}
+
+.login-form .new-user a, .signup-form .agree-terms a {
+    color: #b1cec8;
+    font-weight: bold;
+}
+
+.form-container label {
+    font-size: 12px;
+    color: #B1B1B1;
+}
+
+.form-container input {
+    border: 1px solid #B1B1B1;
+    border-radius: 5px;
+    padding: 12px 15px;
+    margin: 10px 0 20px;
+    width: 100%
+}
+
+#agree {
+    float: left;
+    width: 10%;
+}
+
+#agree + label {
+    display: block;
+    font-size: 12px;
+    margin-top: 8px;
+    width: 90%;
+}
+
+input:focus {
+    outline: none;
+}
+
+button {
+    border-radius: 5px;
+    border: 1px solid #b1cec8;
+    background: #b1cec8;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 0px;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:focus {
+    outline: none;
+}
+
+

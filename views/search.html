@@ -13,21 +13,30 @@
   <header>
     <nav>
       <div class="topnav">
-        <a href="#news">Home</a>
-        <a href="#contact">Find</a>
+        <a href="#home">Home</a>
+        <a href="search.html">Find</a>
         <a href="#about">How it Works</a>
       </div>
     </nav
   </header>
-  <div class = "search-section">
-    <<h1>Find your dream consultant</h1>
-     <div class="search-container">
-    	<input type="text"
-      placeholder="Search consultant name, keyword">
-    	<button>Search</button>
-     </div>
-  </div>
+  <div>
+    <div class = "search-section">
+      <<h1>Find your dream consultant</h1>
+       <div class="search-container">
+      	<input type="text"
+        placeholder="Search consultant name, keyword" onsubmit="userAction()" autocomplete="off" id="myInput">
+      	<button onclick="userAction()">Search</button>
+       </div>
+    </div>
+
+    <div style = "position:relative; top:300px;">
+     <p id="results" onclick="openProfile()"></p>
+   </div>
+ </div>
+
 
 </body>
 
 </html>
+
+<script src="search.js"></script>

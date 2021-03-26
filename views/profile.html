@@ -12,8 +12,8 @@
   <header>
     <nav>
       <div class="topnav">
-        <a href="#news">Home</a>
-        <a href="#contact">Find</a>
+        <a href="#home">Home</a>
+        <a href="search.html">Find</a>
         <a href="#about">How it Works</a>
       </div>
     </nav
@@ -23,19 +23,16 @@
   	<img src="avatar.jpg" alt="" class="profile__photo">
     <div class="profile__wrap">
   		<div class="profile__info">
-        <h1>John Doe </h1>
+        <h1 id="h1"> </h1>
         <h4>Surrey, BC </h4>
         <ul id="tags">
-          <li>Ecommerce</li>
-          <li>Food</li>
+          <li id="u1"></li>
         </ul>
         <hr>
 
         <div class="profile__intro">
           <h3> Description </h3>
-    			<p >
-    				I'm John, a professional driver for Uber.
-    			</p>
+    			<p id="p1"></p>
           <h4>From $250/Session </h1>
          </div>
 
@@ -44,5 +41,15 @@
   	</div>
 
 </body>
-
 </html>
+<script>
+var name=localStorage.getItem("name");
+var tag=localStorage.getItem("tag");
+var description=localStorage.getItem("description");
+var price=localStorage.getItem("price");
+
+document.getElementById("h1").innerHTML = name;
+document.getElementById("u1").innerHTML = tag;
+document.getElementById("p1").innerHTML = description;
+
+</script>

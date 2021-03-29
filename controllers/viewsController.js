@@ -69,11 +69,11 @@ exports.getAccount = (req, res) => {
 };
 
 exports.getMyBookings = catchAsync( async (req, res, next) => {
-  const bookingClient = await Booking.find({ user: req.user.id })
+  const bookingClient = await Booking.find({ user: res.locals.user.id })
   const consultantIds = bookingClient.map(el => el.consultant)
   const consultants = await User.find({_id: {$in: consultantIds} });
 
-  const bookingConsultant = await Booking.find({ consultant: req.user.id })
+  const bookingConsultant = await Booking.find({ consultant: res.locals.user.id })
   const userIds = bookingConsultant.map(el => el.user)
   const users = await User.find({_id: {$in: userIds} });
 

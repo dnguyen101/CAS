@@ -8,6 +8,7 @@ const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 const userRouter = require('./routes/userRoutes');
 const bookingRouter = require('./routes/bookingRoutes');
+const bookingController = require('./controllers/bookingController')
 const viewRouter = require('./routes/viewRoutes');
 
 const app = express();
@@ -23,6 +24,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
+
+app.post('/webhook-checkout', express.raw({type: 'application/json'}), bookingController.webhookChekout);
 
 // Body parser, reading data from body into req.body
 app.use(express.json({ limit: '10kb' }));

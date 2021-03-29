@@ -8,7 +8,8 @@ exports.getCheckoutSession = catchAsync (async (req, res, next) => {
     const consultant = await User.findById(req.params.consultantId);
     const session = await stripe.checkout.sessions.create({
         payment_method_types: ['card'],
-        success_url: `${req.protocol}://${req.get('host')}/?consultant=${req.params.consultantId}&user=${res.locals.user.id}&price=${consultant.price}`,
+        // success_url: `${req.protocol}://${req.get('host')}/?consultant=${req.params.consultantId}&user=${res.locals.user.id}&price=${consultant.price}`,
+        success_url: `${req.protocol}://${req.get('host')}/my-bookings`,
         cancel_url: `${req.protocol}://${req.get('host')}/users/${consultant.slug}`,
         customer_email: res.locals.user.email,
         client_reference_id: req.params.consultantId,
@@ -29,12 +30,42 @@ exports.getCheckoutSession = catchAsync (async (req, res, next) => {
     })
 });
 
-exports.createBookingCheckout = catchAsync (async (req, res, next) => {
-    const {consultant, user, price} = req.query;
+// Use the below function when working locally
 
-    if(!consultant && !user && !price) return next();
+// exports.createBookingCheckout = catchAsync (async (req, res, next) => {
+//     const {consultant, user, price} = req.query;
 
-    await Booking.create({consultant, user, price});
+//     if(!consultant && !user && !price) return next();
 
-    res.redirect(req.originalUrl.split('?')[0])
-});
+//     await Booking.create({consultant, user, price});
+
+//     res.redirect(req.originalUrl.split('?')[0])
+// });
+
+const createBookingCheckout = async session => {
+    const consultant = session.client_reference_id;
+    const user = (await User.findOne({ email: session.customer_email })).id;
+    const price = session.display_items[0].amount / 100;
+    await Booking.create({ consultant, user, price });
+  };
+
+exports.webhookCheckout = (req, res, next) => {
+    const signature = req.headers['stripe-signature'];
+  
+    let event;
+    try {
+        event = stripe.webhooks.constructEvent(
+            req.body,
+            signature,
+            'whsec_o9LFOONfO5fbfH2yqgeMnn066kVSwZMf'
+        );
+    } catch (err) {
+      return res.status(400).send(`Webhook error: ${err.message}`);
+    }
+  
+    if (event.type === 'checkout.session.completed')
+      createBookingCheckout(event.data.object);
+  
+    res.status(200).json({ received: true });
+  };
+  

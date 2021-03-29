@@ -1,0 +1,46 @@
+extends base
+
+block content
+  section.registration-section
+    .sign-up-container
+        .overlay-container
+            h1
+                | Get
+                br
+                | Started!
+        .form-container
+            form(action='#').form--signup
+                h1 Sign Up
+                p Let&apos;s get you all set up so you can begin exploring!
+                label(for='userType') Select your type
+                select#userType(name='userType')
+                    option(value='consultant') Consultant
+                    option(value='client') Client
+                label(for='name') Name
+                input#name(type='text', name='name', placeholder='Name' required)
+                label(for='email') Email
+                input#email(type='email', name='email', placeholder='Email' required)
+                label(for='password') Password
+                input#password(type='password', name='password', placeholder='Password' required)
+                label(for='passwordConfirm') Confirm Password
+                input#passwordConfirm(type='password', name='passwordConfirm', placeholder='Confirm Password' required)
+                label#descriptionLabel(for='description') Description
+                input#description(type='text', name='description', placeholder='Description' required)
+                label#tagLabel(for='tag') Tag
+                input#tag(type='text', name='tag', placeholder='Tag' required)
+                label#experienceLabel(for='experience') Experience
+                input#experience(type='text', name='experience', placeholder='Experience' required)
+                label#locationLabel(for='location') Location
+                input#location(type='text', name='location', placeholder='Location' required)
+                label#priceLabel(for='price') Price
+                input#price(type='text', name='price', placeholder='Price/session' required)
+                .agree-terms
+                    input#agree(type='checkbox', required='', name='checkbox', value='check')
+                    label(for='agree')
+                        | I have read and agree to the 
+                        a(href='/terms' target="_blank") Terms of Service
+                button Sign Up
+            .return-user
+                p
+                    | Already have an account? 
+                a(href='/login') Login

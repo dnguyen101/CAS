@@ -1,0 +1,25 @@
+extends base
+
+block content
+  .container
+    section.registration-section
+      .login-container
+        .overlay-container
+          h1
+            | Welcome
+            br
+            | Back!
+        .form-container
+          form(action='#').form--login
+            h1 Login
+            p Welcome back! Please login to your account
+            label(for='email') Email
+            input#email(type='email' placeholder='Email' required)
+            label(for='password') Password
+            input#password(type='password' placeholder='Password' required)
+            a(href='#') Forgot your password?
+            button Login
+          .new-user
+            p
+              | New User? 
+            a(href='/signup') Signup

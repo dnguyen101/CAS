@@ -1,0 +1,39 @@
+extends base
+
+block content
+    section.padding-t.padding-b
+        .container
+            h1 Bookings
+            if user.userType === 'client'
+                .table-section  
+                    if consultants.length !== 0 
+                        table.table
+                            thead
+                                tr
+                                    th(scope="col") Consultant Name
+                                    th(scope="col") Description
+                                    th(scope="col") Tag
+                                    th(scope="col") Price
+                            each consultant in consultants
+                                tbody
+                                    tr 
+                                        td= consultant.name
+                                        td= consultant.description
+                                        td= consultant.tag
+                                        td= `$${consultant.price}`
+            else
+                .table-section  
+                    if users.length !== 0 
+                        table.table
+                            thead
+                                tr
+                                    th(scope="col") Client Name
+                                    th(scope="col") Client Email
+                                    th(scope="col") 
+                            each user in users
+                                tbody
+                                    tr 
+                                        td= user.name
+                                        td= user.email
+                                        td
+                                            a.cta-details(href=`https://sleepy-forest-52542.herokuapp.com/` target="_blank") ChatRoom

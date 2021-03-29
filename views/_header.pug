@@ -1,0 +1,24 @@
+header.header
+    nav.navbar.navbar-expand-lg.navbar-dark
+        .container
+            a.navbar-brand(href='/')
+                h1 CAS
+            button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarResponsive')
+                span.navbar-toggler-icon
+            #navbarResponsive.collapse.offset.navbar-collapse
+                ul.navbar-nav.menu_nav.justify-content-center
+                    li.nav-item(class=(title === "Search" ? "active" : undefined))
+                        a.nav-link(href='/') Search
+                    li.nav-item(class=(title === "About" ? "active" : undefined))
+                        a.nav-link(href='/about') About
+                    li.nav-item(class=(title === "Works" ? "active" : undefined))
+                        a.nav-link(href='/works') How It Works
+                ul.navbar-nav.menu-nav.justify-content-center
+                    if user
+                        a.nav-link.logout Logout
+                        a.nav-link.user-name(href='/me')= user.name.split(' ')[0]
+                    else
+                        li.nav-item(class=(title === "Login" ? "active" : undefined))
+                            a.nav-link(href='/login') Login
+                        li.nav-item(class=(title === "Sign Up" ? "active" : undefined))
+                            a.nav-link(href='/signup') Signup

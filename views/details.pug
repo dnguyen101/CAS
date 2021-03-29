@@ -1,0 +1,19 @@
+extends base
+
+block content
+    section.padding-t.padding-b
+        .container
+            .details-section
+                .details-container
+                    a.back-link(href="javascript:history.back()") Go Back
+                    h1.price= `$${consultant.price}/session`
+                    h1.name= consultant.name
+                    h3= consultant.location
+                    span.tag= consultant.tag
+                    hr
+                    h6 Description
+                    p= consultant.description
+                    if user && user.userType !== 'consultant'
+                        button#book-consultant(data-consultant-id=`${consultant.id}`) Book Session
+                
+

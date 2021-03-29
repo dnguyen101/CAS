@@ -1,0 +1,35 @@
+.date-picker {
+    text-align: center;
+}
+
+.date-picker #date-picker, .list-events-container {
+    display: inline-block;
+    width: 49%;
+    text-align: center;
+    height: 400px;
+    overflow: auto;
+}
+
+.date-picker #date-picker {
+  
+    border-right: 3px solid #bfbfbf;
+}
+
+.date-picker .ui-datepicker-calendar {
+    width: 100%;
+    height: 80%;
+}
+
+.date-picker .ui-datepicker-prev, .ui-datepicker-next {
+    cursor: pointer;
+}
+
+.date-picker .ui-datepicker-title, .ui-datepicker-prev, .ui-datepicker-next {
+    margin: 20px;
+    font-weight: bold;
+}
+
+
+.date-picker .today-date, .selected-date {
+    font-weight: bold;
+}

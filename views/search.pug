@@ -14,7 +14,6 @@ block content
                     table.table
                         thead
                             tr
-                                th(scope="col") #
                                 th(scope="col") Consultant Name
                                 th(scope="col") Category
                                 th(scope="col") Experience
@@ -22,7 +21,6 @@ block content
                         each consultant in consultants
                             tbody
                                 tr(height="65px")
-                                    th(scope="row")
                                     td= consultant.name
                                     td= consultant.tag
                                     td= `${consultant.experience}+ years` 

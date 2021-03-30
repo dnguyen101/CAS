@@ -45,7 +45,7 @@ export const signup = async (name, email, password, passwordConfirm, userType, d
         if (res.data.status === 'success') {
             showAlert('success', 'Signed Up successfully');
             window.setTimeout(() => {
-                location.assign('/');
+                widnow.location.assign('/');
             }, 2000);
         }
     } catch (err) {

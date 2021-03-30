@@ -368,7 +368,7 @@ button:focus {
   margin: 40px 0 30px;
 }
 
-.terms-section h6 {
+.terms-section h6, .works-section h6 {
   margin-bottom: 10px;
   text-decoration: underline;
 }

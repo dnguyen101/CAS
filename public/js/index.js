@@ -1,5 +1,6 @@
 import '@babel/polyfill';
 import { login, signup, logout } from './login';
+import { showAlert } from './alerts';
 import { bookConsultant } from './stripe';
 
 const loginForm = document.querySelector('.form--login');

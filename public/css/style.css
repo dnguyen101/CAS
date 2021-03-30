@@ -92,6 +92,12 @@ header button:focus {
 
 .user-name {
   color: #fff !important;
+  background: #b1b1b1;
+  text-transform: uppercase;
+}
+
+.booking-name {
+  color: #fff !important;
 }
 
 /* .dropdown-menu {
@@ -178,6 +184,13 @@ a:hover {
   height: 100vh;
 }
 
+.myaccount-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
 .login-container {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   position: relative;
@@ -209,7 +222,6 @@ a:hover {
   align-items: center;
   height: 100%;
   color: #fff;
-  font-size: 3rem;
 }
 
 .form-container {

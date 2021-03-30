@@ -3,6 +3,27 @@ extends base
 block content 
     section.padding-t.padding-b
         .container
-            h1 This is my account 
-               a(href='/my-bookings') My Bookings
-            p=user
+            section.myaccount-section
+                .login-container
+                    .overlay-container
+                        h1
+                            | Account
+                            br
+                            | Details!
+                    .form-container
+                        .form--login
+                            label(for='name') Name
+                            input#name(type='text' value=`${user.name}` disabled)
+                            label(for='email') Email
+                            input#email(type='email' value=`${user.email}` disabled)
+                            if  user && user.userType === 'consultant'
+                                label(for='description') Description
+                                input#description(type='text' value=`${user.description}` disabled)
+                                label(for='tag') Category
+                                input#tag(type='text' value=`${user.tag}` disabled)
+                                label(for='experience') Experience
+                                input#experience(type='text' value=`${user.experience}` disabled)
+                                label(for='location') Location
+                                input#location(type='text' value=`${user.location}` disabled)
+                                label(for='price') Price
+                                input#price(type='text' value=`${user.price}` disabled)

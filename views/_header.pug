@@ -13,10 +13,14 @@ header.header
                         a.nav-link(href='/about') About
                     li.nav-item(class=(title === "Works" ? "active" : undefined))
                         a.nav-link(href='/works') How It Works
-                ul.navbar-nav.menu-nav.justify-content-center
+                ul.navbar-nav.menu-nav.justify-content-end
                     if user
-                        a.nav-link.logout Logout
-                        a.nav-link.user-name(href='/me')= user.name.split(' ')[0]
+                        li.nav-item
+                            a.nav-link.logout Logout
+                        li.nav-item  
+                            a.nav-link.booking-name(href='/my-bookings') MyBookings
+                        li.nav-item
+                            a.nav-link.user-name(href='/me')= user.name.split(' ')[0]
                     else
                         li.nav-item(class=(title === "Login" ? "active" : undefined))
                             a.nav-link(href='/login') Login

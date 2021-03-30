@@ -14,6 +14,7 @@ block content
                                     th(scope="col") Description
                                     th(scope="col") Tag
                                     th(scope="col") Price
+                                    th(scope="col")
                             each consultant in consultants
                                 tbody
                                     tr 
@@ -21,6 +22,8 @@ block content
                                         td= consultant.description
                                         td= consultant.tag
                                         td= `$${consultant.price}`
+                                        td
+                                            a.cta-details(href=`https://sleepy-forest-52542.herokuapp.com/` target="_blank") ChatRoom
             else
                 .table-section  
                     if users.length !== 0 

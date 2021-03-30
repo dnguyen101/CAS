@@ -6,7 +6,10 @@ const AppError = require('../utils/appError');
 exports.getConsultants = catchAsync(async (req, res, next) => {
   let consultants;
   if(req.query.search){
-    consultants = await User.find({ userType: 'consultant', name: req.query.search });
+    const regex = new RegExp(escapeRegex(req.query.search), 'gi');
+    consultants = await User.find({$and:[{ $or: [{name: regex},{tag: regex}]}, {userType: 'consultant'}]});
+  } else if (req.query.search === null) {
+    consultants = await User.find({ userType: 'consultant' });
   } else {
     consultants = await User.find({ userType: 'consultant' });
   }
@@ -15,6 +18,10 @@ exports.getConsultants = catchAsync(async (req, res, next) => {
     consultants
   });
 });
+
+function escapeRegex(text) {
+  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+};
 
 exports.getConsultant = catchAsync(async (req, res, next) => {
   // 1) Get the data, for the requested tour (including reviews and guides)

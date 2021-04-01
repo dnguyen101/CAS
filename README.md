@@ -14,5 +14,9 @@ Go to `http://127.0.0.1:3000/` in your browser
 # Deployed App
 https://cas-kpu.herokuapp.com/
 
-# Terms and Condition
+Account Details
+Consultant Login - dustin@test.com / pass1234
+Client Login - test@test.com / pass1234
+
+# Terms and Conditions
 https://cas-kpu.herokuapp.com/terms
